@@ -12,11 +12,13 @@ public class Intellect {
         int i = 0;//r.nextInt(3);
 
         if (i == 0) {
-            sell.kick(yourHero, enemyHero);
-        } else if (i == 1) {
 
-            System.out.println("Попытка уклонения");
-            //      sell.protection(intell);
+            enemyHero.removeHp(yourHero.getDamage());
+            System.out.println(yourHero.getType().getName() + " наносит удар!: "
+                    + "-" + yourHero.getDamage() + " "
+                    + enemyHero.getType().getName() + "(" + enemyHero.getHp() + ").");
+            
+        } else if (i == 1) {
 
         } else if (i == 2) {
             sell.heal(yourHero);

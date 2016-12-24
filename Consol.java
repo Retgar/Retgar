@@ -16,6 +16,7 @@ public class Consol {
     int i;
     int j;
     int d;
+    
 
     public void action(Enemy yourHero, Enemy enemyHero) {
 
@@ -29,8 +30,9 @@ public class Consol {
                 break;
 
             } else if (d == 2) {
+                
                 select.protection(yourHero);
-                System.out.println("Вы выбрали класс " + enemyHero.getType().getName());
+             
                 break;
 
             } else if (d == 3) {
@@ -42,7 +44,9 @@ public class Consol {
                 System.out.println("Введи число от 1 до 3");
             }
         }
-    }
+    }   
+        
+    
 
     public void enemyBuild() {
         mage = EnemyFactory.getEnemy(EnemyType.MAGE);
@@ -71,7 +75,7 @@ public class Consol {
             } else {
                 System.out.println("Введи число от 1 до 3");
             }
-        }
+        };
     }
 
     public Enemy getDeffer() {

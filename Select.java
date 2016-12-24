@@ -2,17 +2,18 @@ package clicker;
 
 public class Select {
 
+    Intellect intel = new Intellect();
+
     public void kick(Enemy yourHero, Enemy enemyHero) {
 
-        //  System.out.println(yourHero.getType().getName() + "Промахнулся!");
         enemyHero.removeHp(yourHero.getDamage());
         System.out.println(yourHero.getType().getName() + " наносит удар!: "
                 + "-" + yourHero.getDamage() + " "
                 + enemyHero.getType().getName() + "(" + enemyHero.getHp() + ").");
+
     }
 
-    public void protection(Enemy hero) {
-
+    public void protection(Enemy enemyHero) {
         System.out.println("Уворот");
 
     }

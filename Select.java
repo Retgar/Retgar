@@ -2,8 +2,6 @@ package clicker;
 
 public class Select {
 
-    Intellect intel = new Intellect();
-
     public void kick(Enemy yourHero, Enemy enemyHero) {
 
         enemyHero.removeHp(yourHero.getDamage());

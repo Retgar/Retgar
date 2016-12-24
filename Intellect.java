@@ -1,10 +1,8 @@
 package clicker;
 
-import java.util.Random;
-
 public class Intellect {
 
-    Random r = new Random();
+    
     Select sell = new Select();
 
     public void intAction(Enemy yourHero, Enemy enemyHero) {

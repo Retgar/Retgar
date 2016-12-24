@@ -7,8 +7,8 @@ public class Consol {
     public Enemy mage;
     public Enemy warrior;
     public Enemy rogue;
-    public Enemy myClass;
-    public Enemy otherClass;
+    public Enemy yourHero;
+    public Enemy enemyHero;
 
     Scanner scanner = new Scanner(System.in);
     Select select = new Select();
@@ -17,46 +17,30 @@ public class Consol {
     int j;
     int d;
 
-    public void myClass() {
+    public void action(Enemy yourHero, Enemy enemyHero) {
 
-        System.out.println("Вам стоит выбрать ваш класс:");
+        while (true) {
 
-        System.out.println("'1'- Выбрать класс 'war'");
-        System.out.println("'2'- Выбрать класс 'mag'");
-        System.out.println("'3'- Выбрать класс 'rog'");
+            d = scanner.nextInt();
 
-    }
+            if (d == 1) {
+                select.kick(yourHero, enemyHero);
+                System.out.println("Вы ударили " + enemyHero.getType().getName());
+                break;
 
-    public void otherClass() {
+            } else if (d == 2) {
+                select.protection(yourHero);
+                System.out.println("Вы выбрали класс " + enemyHero.getType().getName());
+                break;
 
-        System.out.println("Теперь вам стоит выбрать класс противника!");
-        System.out.println("'1'- Выбрать класс 'war'");
-        System.out.println("'2'- Выбрать класс 'mag'");
-        System.out.println("'3'- Выбрать класс 'rog'");
+            } else if (d == 3) {
+                select.heal(yourHero);
+                System.out.println("Вы решили сегодня не курить! +15 к здоровью! ");
+                break;
 
-    }
-
-    public void action(Enemy myClass, Enemy otherClass) {
-        this.myClass = myClass;
-        this.otherClass = otherClass;
-        System.out.println("Выберите дейстиве!");
-        System.out.println("'1'- Ударить по голове противника вашей дубиной");
-        System.out.println("'2'- Попытаться увернуться от дубиный противника");
-        System.out.println("'3'- Наклееть никотиновый пластырь");
-
-        d = scanner.nextInt();
-
-        if (d == 1) {
-            select.kick(myClass, otherClass);
-            System.out.println("Вы ударили " + otherClass.getType().getName());
-        }
-        if (d == 2) {
-            select.protection(myClass);
-       System.out.println("Вы выбрали класс " + otherClass.getType().getName());
-        }
-        if (d == 3) {
-            select.heal(myClass);
-            System.out.println("Вы решили сегодня не курить! +15 к здоровью! ");
+            } else {
+                System.out.println("Введи число от 1 до 3");
+            }
         }
     }
 
@@ -68,41 +52,50 @@ public class Consol {
     }
 
     public Enemy getAttacker() {
+
         enemyBuild();
-        i = i = scanner.nextInt();
-        if (i == 1) {
-            myClass = warrior;
 
+        while (true) {
+
+            i = scanner.nextInt();
+
+            if (i == 1) {
+                enemyHero = warrior;
+                return enemyHero;
+            } else if (i == 2) {
+                enemyHero = mage;
+                return enemyHero;
+            } else if (i == 3) {
+                enemyHero = rogue;
+                return enemyHero;
+            } else {
+                System.out.println("Введи число от 1 до 3");
+            }
         }
-        if (i == 2) {
-            myClass = mage;
-
-        }
-        if (i == 3) {
-            myClass = rogue;
-
-        }
-
-        return myClass;
     }
 
     public Enemy getDeffer() {
+
         enemyBuild();
-        j = scanner.nextInt();
-        if (j == 1) {
-            otherClass = warrior;
 
+        while (true) {
+
+            j = scanner.nextInt();
+
+            if (j == 1) {
+                enemyHero = warrior;
+                return enemyHero;
+            } else if (j == 2) {
+                enemyHero = mage;
+                return enemyHero;
+            } else if (j == 3) {
+                enemyHero = rogue;
+                return enemyHero;
+            } else {
+                System.out.println("Введи число от 1 до 3");
+            }
         }
-        if (j == 2) {
-            otherClass = mage;
 
-        }
-        if (j == 3) {
-            otherClass = rogue;
-
-        }
-
-        return otherClass;
     }
 
 }

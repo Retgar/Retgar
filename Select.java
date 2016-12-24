@@ -2,27 +2,24 @@ package clicker;
 
 public class Select {
 
-    Intellect intel = new Intellect();
+    public void kick(Enemy yourHero, Enemy enemyHero) {
 
-    public void kick(Enemy attacker, Enemy defender) {
-
-        System.out.println(attacker.getType().getName() + "Промахнулся!");
-
-        defender.removeHp(attacker.getDamage());
-        System.out.println(attacker.getType().getName() + " наносит удар!: "
-                + "-" + attacker.getDamage()
-                + defender.getType().getName() + "(" + defender.getHp() + ").");
+        //  System.out.println(yourHero.getType().getName() + "Промахнулся!");
+        enemyHero.removeHp(yourHero.getDamage());
+        System.out.println(yourHero.getType().getName() + " наносит удар!: "
+                + "-" + yourHero.getDamage() + " "
+                + enemyHero.getType().getName() + "(" + enemyHero.getHp() + ").");
     }
 
-    public void protection(Enemy defender) {
+    public void protection(Enemy hero) {
 
         System.out.println("Уворот");
 
     }
 
-    public void heal(Enemy defender) {
-        defender.healHp();
-        System.out.println(defender.getType().getName() + " Подлечил себя! + 15hp" + defender.getHp());
+    public void heal(Enemy yourHero) {
+        yourHero.healHp();
+        System.out.println(yourHero.getType().getName() + " Подлечил себя! + 15hp" + yourHero.getHp());
     }
 
 }

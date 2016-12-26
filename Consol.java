@@ -4,21 +4,18 @@ import java.util.Scanner;
 
 public class Consol {
 
-    public Enemy mage;
-    public Enemy warrior;
-    public Enemy rogue;
-    public Enemy yourHero;
-    public Enemy enemyHero;
+    private Enemy mage;
+    private Enemy warrior;
+    private Enemy rogue;
+    private Enemy yourHero;
+    private Enemy enemyHero;
+    private int miss;
 
     Scanner scanner = new Scanner(System.in);
     Select select = new Select();
 
-    int i;
-    int j;
-    int d;
-
     public void action(Enemy yourHero, Enemy enemyHero) {
-
+        int d;
         while (true) {
 
             d = scanner.nextInt();
@@ -54,6 +51,7 @@ public class Consol {
 
     public Enemy getAttacker() {
 
+        int i;
         enemyBuild();
 
         while (true) {
@@ -61,14 +59,14 @@ public class Consol {
             i = scanner.nextInt();
 
             if (i == 1) {
-                enemyHero = warrior;
-                return enemyHero;
+                yourHero = warrior;
+                return yourHero;
             } else if (i == 2) {
-                enemyHero = mage;
-                return enemyHero;
+                yourHero = mage;
+                return yourHero;
             } else if (i == 3) {
-                enemyHero = rogue;
-                return enemyHero;
+                yourHero = rogue;
+                return yourHero;
             } else {
                 System.out.println("Введи число от 1 до 3");
             }
@@ -77,6 +75,7 @@ public class Consol {
 
     public Enemy getDeffer() {
 
+        int j;
         enemyBuild();
 
         while (true) {

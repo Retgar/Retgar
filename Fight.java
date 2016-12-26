@@ -2,10 +2,8 @@ package clicker;
 
 public class Fight {
 
-    public int hp = 1;
     private Enemy player;
     private Enemy intellectI;
-
 
     Intellect intel = new Intellect();
 
@@ -35,7 +33,7 @@ public class Fight {
         intellectI = cons.getDeffer();
 
         while (true) {
-           
+
             if (player.getHp() > 0) {
                 if (intellectI.getHp() > 0) {
 
